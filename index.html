@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Wikipedia Search</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
 </head>
 <body>
-$END$
+
+<div class="container">
+
+    <div class="search">
+        <input id="searchbox" type="text" placeholder="Wikipedia Search"><button class="btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button class="btn-random"><i class="fa fa-random" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="result">
+        <div class="content">
+            <h2>Wikipedia Search</h2>
+            <p>Search for an article on Wikipedia using the search bar above.</p>
+        </div>
+        <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
+    </div>
+
+    <div class="result">
+        <div class="content">
+            <h2>Random Article</h2>
+            <p>Go to a random Wikipedia article by clicking the random button above.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="float-tabs">
+    <div class="tab linkedin-tab">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+    </div>
+    <div class="tab github-tab">
+        <i class="fa fa-github" aria-hidden="true"></i>
+    </div>
+</div>
 </body>
 </html>
