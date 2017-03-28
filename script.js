@@ -1,6 +1,3 @@
-/**
- * Created by billy on 28/03/17.
- */
 var github = "https://www.github.com/billy-7";
 var linkedin = "https://www.linkedin.com/in/billyschulze";
 
@@ -15,16 +12,19 @@ var result = ['<div class="result"><div class="content"><h2>', '</h2><p>', '</p>
 function search() {
     var searchterm = $("#searchbox").val();
     $.getJSON(api + searchterm + cb, function (data) {
-        var pages = data.query.pages;
-        var ids = Object.keys(pages);
         $(".result").remove();
-        ids.forEach(function (id) {
-            $(".container").append(result[0] + pages[id].title + result[1] + pages[id].extract + result[2] + id + result[3]);
-        });
-        $(".fa-arrow-right").click(function () {
-            window.open(url + $(this).attr("id"));
-        });
-
+        if (data.query) {
+            var pages = data.query.pages;
+            var ids = Object.keys(pages);
+            ids.forEach(function (id) {
+                $(".container").append(result[0] + pages[id].title + result[1] + pages[id].extract + result[2] + id + result[3]);
+            });
+            $(".fa-arrow-right").click(function () {
+                window.open(url + $(this).attr("id"));
+            });
+        } else {
+            $(".container").append(result[0] + "No Results" + result[1] + "Try searching again..." + result[2] + '" class="fa fa-close" aria-hidden="true"></i></div>');
+        }
     }).fail(function () {
         console.log("error");
     });
